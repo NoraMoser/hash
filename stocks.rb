@@ -45,3 +45,16 @@ for array in purchases
     indexSum << indexTimes
     p indexSum
 end
+
+# puts purchases[0]
+
+part_two = Hash.new
+
+for answer in purchases
+    if part_two.has_key?(answer[0])
+        part_two[answer[0]].push(answer[1]* answer[3])
+    else part_two[answer[0]] = [answer[1]* answer[3]]
+    end
+end
+
+puts part_two
